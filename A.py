@@ -1,3 +1,5 @@
+# This file can pass the test if you choose 'PyPy 3'.
+
 inputList = input().split()
 
 if len(inputList) != 2:
