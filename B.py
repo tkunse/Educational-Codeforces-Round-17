@@ -3,44 +3,43 @@ pcU = int(inputLine[0])
 pcP = int(inputLine[1])
 pcUP = int(inputLine[2])
 
-mouseList = []
-priceList = []
+priceList1 = []
+priceList2 = []
 readSize = int(input())
 for i in range(readSize):
   tmpList = input().split()
-  priceList.append(int(tmpList[0]))
   if str(tmpList[1]) == 'USB':
-    mouseList.append(1)
+    priceList1.append(int(tmpList[0]))
   else:
-    mouseList.append(2)
+    priceList2.append(int(tmpList[0]))
 
+uNum = len(priceList1)
+pNum = len(priceList2)
+priceList1.sort()
+priceList2.sort()
 price = 0
 equip = 0
-for i in range(readSize):
-  tmpPrice = min(priceList)
-  minPos = priceList.index(tmpPrice)
-  del priceList[minPos]
-  tmpType = mouseList[minPos]
-  del mouseList[minPos]
-  if tmpType == 1:
-    if pcU > 0:
-      pcU -= 1
-      price += tmpPrice
-      equip += 1
-    else:
-      if pcUP > 0:
-        pcUP -= 1
-        price += tmpPrice
-        equip += 1
-  else:
-    if pcP > 0:
-      pcP -= 1
-      price += tmpPrice
-      equip += 1
-    else:
-      if pcUP > 0:
-        pcUP -= 1
-        price += tmpPrice
-        equip += 1
+
+tmp = min(uNum,pcU)
+price += sum(priceList1[0:tmp])
+equip += tmp
+del priceList1[0:tmp]
+uNum -= tmp
+pcU -= tmp
+
+tmp = min(pNum,pcP)
+price += sum(priceList2[0:tmp])
+equip += tmp
+del priceList2[0:tmp]
+pNum -= tmp
+pcP -= tmp
+
+priceList = priceList1
+priceList.extend(priceList2)
+priceList.sort()
+fNum = len(priceList)
+tmp = min(fNum,pcUP)
+price += sum(priceList[0:tmp])
+equip += tmp
 
 print(str(equip)+' '+str(price))
