@@ -1,3 +1,5 @@
+# This file can pass the test if you choose 'Python 3'.
+
 inputLine = input().split()
 pcU = int(inputLine[0])
 pcP = int(inputLine[1])
