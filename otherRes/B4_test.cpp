@@ -2,6 +2,7 @@
 // Learning C++ with real code
 // Test: http://codeforces.com/contest/762/problem/B
 
+///////////////////////// only presets (it can be copy to any file to increase your development speed
 #include <bits/stdc++.h>
 
 #define mp(a, b) make_pair((a), (b))
@@ -30,6 +31,7 @@ const lld LINF = 1e18;
 const double FINF = 1e15;
 const double EPS = 1e-9;
 const double PI = 2.0 * acos(0.0);
+///////////////////////// Presets end
 
 int a, b, c;
 int n;
@@ -41,7 +43,7 @@ int main() {
     int x;
     char s[10];
     scanf(" %d %s ", &x, s);
-    if (s[0] == 'U') {
+    if (s[0] == 'U') { // if the first letter is U (USB)
       v[i] = pii(x, 0);
     } else {
       v[i] = pii(x, 1);
