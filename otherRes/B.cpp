@@ -1,4 +1,4 @@
-# GNU C++
+// GNU C++
 
 #include <bits/stdc++.h>
 #define ll long long
