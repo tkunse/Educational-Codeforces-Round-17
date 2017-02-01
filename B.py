@@ -1,4 +1,5 @@
 # This file can pass the test if you choose 'Python 3'.
+# For testing go to http://codeforces.com/problemset/problem/762/B or http://codeforces.com/contest/762/problem/B
 
 inputLine = input().split()
 pcU = int(inputLine[0])
